@@ -1,0 +1,33 @@
+<tal:block
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tal="http://xml.zope.org/namespaces/tal"
+	xmlns:metal="http://xml.zope.org/namespaces/metal"
+	xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	xmlns:phptal="http://phptal.org/ns/phptal"
+>
+	<!--
+		Required variables:
+			class
+			name
+			label
+			required
+			value
+			options
+			optionValue
+			optionLabel
+		Optional variables:
+			selected
+			placeholder
+			error
+	-->
+	<p tal:attributes="class class">
+		<label tal:attributes="for name;"><tal:inline tal:content="label" />:<span tal:condition="required" class="required"> *</span></label>
+		<select tal:attributes="id name; name name" tal:define="selected selected | null">
+			<option tal:condition="true:placeholder" tal:content="placeholder" value="">PLEASE SELECT...</option>
+			<option tal:repeat="option options"
+				tal:attributes="value option/${optionValue}; selected TALES_Logic.isEqual:option/${optionValue},selected"
+				tal:content="option/${optionLabel}">OPTION NAME</option>
+		</select>
+		<span class="error" tal:condition="exists:error" tal:content="error">ERROR</span>
+	</p>
+</tal:block>
