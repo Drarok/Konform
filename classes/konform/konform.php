@@ -166,7 +166,10 @@ abstract class Konform_Konform
 			$element->name = $fieldName;
 			$element->label = Arr::get($fieldOptions, 'label', $fieldName);
 			$element->required = Arr::get($fieldOptions, 'required', false);
-			$element->value = Arr::get($this->_data, $fieldName, '');
+			if (($value = Arr::get($this->_data, $fieldName, FALSE)) === FALSE) {
+				$value = Arr::get($fieldOptions, 'default', '');
+			}
+			$element->value = $value;
 			$class = Arr::get($fieldOptions, 'class', '');
 			if (array_key_exists($fieldName, $this->_errors)) {
 				$class .= ' error';
@@ -201,6 +204,7 @@ abstract class Konform_Konform
 					break;
 
 				case 'submit':
+				case 'hidden':
 					// Nothing special required, but we need to have a 'case' to avoid the Exception, below.
 					break;
 
