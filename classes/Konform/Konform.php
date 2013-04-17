@@ -201,6 +201,7 @@ abstract class Konform_Konform
 					break;
 
 				case 'submit':
+				case 'hidden':
 					// Nothing special required, but we need to have a 'case' to avoid the Exception, below.
 					break;
 
