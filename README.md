@@ -1,4 +1,4 @@
-# Konform - Simple form generator for Kohana 3.2+
+# Konform - Simple form generator for Kohana 3.3+
 
 ## Requirements
 
@@ -11,8 +11,8 @@ You'll need the [KOtal] module, as the views are written in PHPTAL.
 * Create a subclass of Konform (Konform_Contact, for example).
 * Set the $_fields property up in your subclass (either in its _init() method, or just at the top of the class).
 * Create a messages/konform/contact.php file, and populate it with your error messages.
-* Instantiate your class and use it. ;)
-* Add some CSS to target these forms in a generic way, and enjoy.
+* Instantiate your class and use it (see below).
+* Add some CSS to target these forms, and enjoy.
 
 ## Examples
 

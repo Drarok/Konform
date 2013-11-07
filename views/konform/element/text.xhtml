@@ -19,6 +19,6 @@
 	<p tal:attributes="class class">
 		<label tal:attributes="for name;"><tal:inline tal:content="label" />:<span tal:condition="required" class="required"> *</span></label>
 		<input type="text" tal:attributes="id name; name name; value value; maxlength maxlength" />
-		<span tal:condition="exists:error" tal:content="error">ERROR</span>
+		<span tal:condition="exists:error" tal:content="error" class="error">ERROR</span>
 	</p>
 </tal:block>

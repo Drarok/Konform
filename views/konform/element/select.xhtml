@@ -28,6 +28,6 @@
 				tal:attributes="value option/${optionValue}; selected TALES_Logic.isEqual:option/${optionValue},selected"
 				tal:content="option/${optionLabel}">OPTION NAME</option>
 		</select>
-		<span class="error" tal:condition="exists:error" tal:content="error">ERROR</span>
+		<span tal:condition="exists:error" tal:content="error" class="error">ERROR</span>
 	</p>
 </tal:block>
