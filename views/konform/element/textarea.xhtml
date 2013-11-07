@@ -20,6 +20,6 @@
 	<p tal:attributes="class class">
 		<label tal:attributes="for name;"><tal:inline tal:content="label" />:<span tal:condition="required" class="required"> *</span></label>
 		<textarea tal:attributes="id name; name name; cols cols; rows rows" tal:content="value">TEXT HERE</textarea>
-		<span class="error" tal:condition="exists:error" tal:content="error">ERROR</span>
+		<span tal:condition="exists:error" tal:content="error" class="error">ERROR</span>
 	</p>
 </tal:block>
