@@ -1,0 +1,14 @@
+{
+    "name": "drarok/konform",
+    "type": "kohana-module",
+    "description": "Simple form generator for Kohana, using PHPTAL templates.",
+    "require": {
+        "drarok/kotal": "dev-develop"
+    },
+    "authors": [
+        {
+            "name": "Mat 'Drarok' Gadd",
+            "email": "source@catchall.drarok.com"
+        }
+    ]
+}
